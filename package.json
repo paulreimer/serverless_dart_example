@@ -1,5 +1,8 @@
 {
   "name": "serverless_dart_example",
   "version": "0.0.1",
-  "main": "index.js"
+  "main": "index.js",
+  "dependencies": {
+    "serverless-google-cloudfunctions": "^1.1.1"
+  }
 }
