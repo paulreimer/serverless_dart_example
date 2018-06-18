@@ -5,5 +5,9 @@
   "devDependencies": {
     "serverless": "^1.27.3",
     "serverless-google-cloudfunctions": "^1.1.1"
+  },
+  "scripts": {
+    "build": "pub run build_runner build --output=build/",
+    "deploy": "sls deploy"
   }
 }
