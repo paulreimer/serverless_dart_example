@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "main": "index.js",
   "devDependencies": {
+    "serverless": "^1.27.3",
     "serverless-google-cloudfunctions": "^1.1.1"
   }
 }
