@@ -1,0 +1,52 @@
+service: serverless-dart-example
+
+provider:
+  name: google
+  runtime: nodejs
+  #project:
+  #credentials: ~/.gcloud/keyfile.json
+
+plugins:
+  - serverless-google-cloudfunctions
+
+# Layout generated from Dart -> JS (using build_node_compilers/node_interop):
+# From running: `pub run build_runner watch --output=build/`
+package:
+  exclude:
+    # No git files
+    - .git/**
+    # No hidden files
+    - .*
+    - .DS_Store
+    # No dart tool cache/config files
+    - .dart_tool/**
+    - analysis_options.yaml
+    - build.yaml
+    - pubspec.*
+    # No local javascript dependencies
+    - node_modules/**
+    - yarn.lock
+    # No Dart -> JS build cache files
+    - build/**
+    # No Dart source files
+    - example/**
+    - node/**
+    - lib/**
+    - web/**
+  include:
+    # Always include a Google Cloud Functions index file
+    - index.js
+    - function.js
+    # Include Dart -> JS build results and source maps
+    - build/node/**/*.js
+    - build/node/**/*.js.map
+
+functions:
+  example1:
+    handler: example1
+    events:
+      - http: path
+  example2:
+    handler: example2
+    events:
+      - http: path
