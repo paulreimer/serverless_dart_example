@@ -37,9 +37,17 @@ package:
     # Always include a Google Cloud Functions index file
     - index.js
     - function.js
-    # Include Dart -> JS build results and source maps
-    - build/node/**/*.js
-    - build/node/**/*.js.map
+
+    # Support dart2js (all JS files within build/node directory)
+    - build/node/*.js
+    - build/node/*.js.map
+
+    # Include Dart SDK
+    - build/node/packages/$sdk/dev_compiler/common/dart_sdk.js
+
+    # Include Dart -> JS packages
+    - build/node/packages/**/*.ddc.js
+    - build/node/packages/**/*.ddc.js.map
 
 functions:
   example1:
