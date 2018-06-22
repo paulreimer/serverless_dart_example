@@ -6,7 +6,6 @@
 // or send a letter to
 // Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.
 
-import 'dart:convert';
 import 'dart:io' as io;
 
 import 'google_cloud_functions.dart';
