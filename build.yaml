@@ -3,3 +3,10 @@ targets:
     sources:
       - "lib/**"
       - "node/**"
+    builders:
+      build_node_compilers|entrypoint:
+        options:
+          compiler: dart2js
+          dart2js_args:
+            #- "--minify"
+            - "--fast-startup"

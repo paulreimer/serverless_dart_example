@@ -7,7 +7,7 @@
 // Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.
 
 @JS()
-library serverless_dart_example;
+library google_cloud_functions;
 
 import 'package:js/js.dart';
 import 'package:node_interop/http.dart' as _http;
