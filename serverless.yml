@@ -1,18 +1,64 @@
 service: serverless-dart-example
 
+################################################################################
 provider:
-  name: google
-  runtime: nodejs
-  #project:
-  #credentials: ~/.gcloud/keyfile.json
+  runtime: nodejs6.10
 
+# Google Cloud Functions
+  name: google
+  project: p-rimes-net
+  credentials: ~/.gcloud/keyfile.json
+  timeout: 60s
+  region: us-central1
+# AWS Lambda
+#  name: aws
+#  stage: dev
+#  region: us-west-2
+#  timeout: 60
+
+################################################################################
+functions:
+  example1:
+    memorySize: 256
+# Google Cloud Functions
+    handler: example1
+    timeout: 15s
+    events:
+      - http: path
+# AWS Lambda
+#    handler: index-aws.example1
+#    timeout: 15
+#    events:
+#      - http:
+#          path: /
+#          method: post
+
+  example2:
+    memorySize: 256
+# Google Cloud Functions
+    handler: example2
+    timeout: 15s
+    events:
+      - http: path
+# AWS Lambda
+#    handler: index-aws.example2
+#    timeout: 15
+#    events:
+#      - http:
+#          path: /
+#          method: post
+
+################################################################################
 plugins:
+  # Add support for Google Cloud Functions
   - serverless-google-cloudfunctions
 
-# Layout generated from Dart -> JS (using build_node_compilers/node_interop):
-# From running: `pub run build_runner watch --output=build/`
+################################################################################
 package:
+  # Layout generated from Dart -> JS (using build_node_compilers/node_interop):
+  # From running: `pub run build_runner watch --output=build/`
   exclude:
+    - '*.*'
     # No git files
     - .git/**
     # No hidden files
@@ -36,25 +82,24 @@ package:
   include:
     # Always include a Google Cloud Functions index file
     - index.js
-    - function.js
 
-    # Support dart2js (all JS files within build/node directory)
+    # Include package.json to indicate package dependencies
+    - package.json
+
+    # Include Dart -> JS generated release build files
     - build/node/*.js
+    # Include Dart -> JS generated debugging files
     - build/node/*.js.map
 
-    # Include Dart SDK
+    # Include Dart -> JS SDK
     - build/node/packages/$sdk/dev_compiler/common/dart_sdk.js
 
-    # Include Dart -> JS packages
+    # Include Dart -> JS generated packages
     - build/node/packages/**/*.ddc.js
     - build/node/packages/**/*.ddc.js.map
 
-functions:
-  example1:
-    handler: example1
-    events:
-      - http: path
-  example2:
-    handler: example2
-    events:
-      - http: path
+# Google Cloud Functions
+    - function.js
+# AWS Lambda
+    # Include an AWS Lambda wrapper for Google Cloud Function handler
+    - index-aws.js
