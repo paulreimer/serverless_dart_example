@@ -11,7 +11,16 @@
   "scripts": {
     "start": "functions-emulator start",
     "stop": "functions-emulator stop",
+
+    "pub": "pub get",
+
+    "prebuild": "yarn run pub",
+    "watch": "pub run build_runner watch --output=build/",
+
+    "prebuild": "yarn run pub",
     "build": "pub run build_runner build --output=build/",
+
+    "predeploy": "yarn run build",
     "deploy": "sls deploy"
   },
   "dependencies": {
