@@ -4,10 +4,13 @@
   "license": "CC-BY-NC-SA-4.0",
   "main": "index.js",
   "devDependencies": {
+    "@google-cloud/functions-emulator": "^1.0.0-beta.4",
     "serverless": "^1.27.3",
     "serverless-google-cloudfunctions": "^1.1.1"
   },
   "scripts": {
+    "start": "functions-emulator start",
+    "stop": "functions-emulator stop",
     "build": "pub run build_runner build --output=build/",
     "deploy": "sls deploy"
   }
