@@ -7,10 +7,10 @@ environment:
   sdk: '>=2.0.0-dev.55.0 <2.0.0'
 
 dependencies:
-  node_interop: ^1.0.0-dev.7.0
+  node_interop: ^1.0.0-dev.8.0
 
 dev_dependencies:
   test: ^0.12.30
-  build_node_compilers: ^0.1.2
+  build_node_compilers: ^0.1.8
   build_runner: any
   build_test: any
