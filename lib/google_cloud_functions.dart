@@ -9,8 +9,8 @@
 @JS()
 library google_cloud_functions;
 
-import 'package:js/js.dart';
-import 'package:node_interop/http.dart' as _http;
+import "package:js/js.dart";
+import "package:node_interop/http.dart" as _http;
 
 // Add JS interop types for Google Cloud Functions request object
 // The request has the body already buffered based on MIME type

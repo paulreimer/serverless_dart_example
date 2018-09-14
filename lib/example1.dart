@@ -6,9 +6,9 @@
 // or send a letter to
 // Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.
 
-import 'dart:io' as io;
+import "dart:io" as io;
 
-import 'google_cloud_functions.dart';
+import "google_cloud_functions.dart";
 
 // Cloud Function HTTP handler
 void example1(
