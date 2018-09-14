@@ -1,5 +1,14 @@
 service: serverless-dart-example
 
+plugins:
+  - serverless-apigw-binary
+  - serverless-apigwy-binary
+
+custom:
+  apigwBinary:
+    types:
+      - "application/octet-stream"
+
 ################################################################################
 provider:
   runtime: nodejs6.10
@@ -28,6 +37,8 @@ functions:
 # AWS Lambda
 #    handler: index-aws.example1
 #    timeout: 15
+#    environment:
+#      BINARY_CONTENT_TYPES: "application/octet-stream"
 #    events:
 #      - http:
 #          path: /
@@ -43,6 +54,8 @@ functions:
 # AWS Lambda
 #    handler: index-aws.example2
 #    timeout: 15
+#    environment:
+#      BINARY_CONTENT_TYPES: "application/octet-stream"
 #    events:
 #      - http:
 #          path: /
