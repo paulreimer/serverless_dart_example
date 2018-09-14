@@ -11,7 +11,7 @@ custom:
 
 ################################################################################
 provider:
-  runtime: nodejs6.10
+  runtime: nodejs8.10
 
 # Google Cloud Functions
   name: google
