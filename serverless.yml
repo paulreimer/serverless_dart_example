@@ -82,8 +82,6 @@ package:
     - analysis_options.yaml
     - build.yaml
     - pubspec.*
-    # No local javascript dependencies
-    - node_modules/**
     - yarn.lock
     # No Dart -> JS build cache files
     - build/**
@@ -111,8 +109,6 @@ package:
     - build/node/packages/**/*.ddc.js
     - build/node/packages/**/*.ddc.js.map
 
-# Google Cloud Functions
-    - function.js
 # AWS Lambda
     # Include an AWS Lambda wrapper for Google Cloud Function handler
     - index-aws.js
